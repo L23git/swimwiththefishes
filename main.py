@@ -215,6 +215,7 @@ def graph_it(df):
         for lib in g.get_xticklabels():
             lib.set_rotation(45)
         #g.set_xticklabels(rotation=90)
+        plt.title(i, y=1.0)
         sns.plt.show()
 
 
