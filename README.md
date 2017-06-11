@@ -4,7 +4,7 @@ Python 2.7 compatible
 # CLI
 Can be run with main.py -s for an intital setup with pulling of the ips from the text file, followed by all the geoip and rdap lookups.
 
-Can also be run with main.py -q to run a query on the data. Use of the query language is described below.
+Can also be run with main.py -q, where then the user will brompted with some instructions to run a query on the data. The query will return the first 50 matches, can be modified for more inside. Use of the query language is described below.
 
 # Running a query
 

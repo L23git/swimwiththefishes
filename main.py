@@ -190,7 +190,7 @@ def filtering(df):
     print '[+] The query is: '+str(query)
     if query.find('*S', 0, 3) != -1:
         new_df = select_q(df, query)
-        print new_df.head(20)
+        print new_df.head(50)
         print '[+] Would you like to make another query?'
         another_one = raw_input('[y] / [n]')
         if 'y' in another_one:
