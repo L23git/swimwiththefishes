@@ -1,4 +1,6 @@
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 from StringIO import StringIO
 import csv, json, time, httplib, sys
 from optparse import OptionParser
@@ -191,6 +193,11 @@ def filtering(df):
     if query.find('*S', 0, 3) != -1:
         new_df = select_q(df, query)
         print new_df.head(50)
+        print '[+] Graph it?'
+        gg = 0
+        gg = raw_input('[y] / [n]')
+        if 'y' in gg:
+            graph_it(new_df)
         print '[+] Would you like to make another query?'
         another_one = raw_input('[y] / [n]')
         if 'y' in another_one:
@@ -200,6 +207,16 @@ def filtering(df):
             sys.exit()
     else:
         print '[+] Invalid query please try again'
+        filtering(df)
+
+def graph_it(df):
+    for i in df.columns:
+        g = sns.countplot(x=i, data=df)
+        for lib in g.get_xticklabels():
+            lib.set_rotation(45)
+        #g.set_xticklabels(rotation=90)
+        sns.plt.show()
+
 
 def select_q(df, query):
     if query.find('*W') == -1:

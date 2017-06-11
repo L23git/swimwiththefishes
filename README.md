@@ -31,3 +31,6 @@ You only ever need one \*W followed by as many \*A and/or \*O conditionals you w
 \*S \* \*W (country_code=PL) \*O (region_code\*ICO, IL, NY, CA) \*A (city!=Denver) \*A (city!=Chicago)
 
 \*S city, ip, region_code, registration \*W (country_code=PL) \*O (country_code=FR) \*A (city!=Paris)
+
+# Graphs
+After a search query has been run there is an option to graph the results which will return seperate barplots for each key of each value graphed by their frequency. Be mindful of doing this with a lot of unique values can get out of hand and unreadable pretty quick.
