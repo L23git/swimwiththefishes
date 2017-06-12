@@ -73,7 +73,7 @@ def main():
 
     print len(ip_list)
     my_df = pd.DataFrame(ip_list, columns=['ip'])
-   # my_df.to_csv('ip.csv', index=False)
+    my_df.to_csv('ip.csv', index=False)
     geo(my_df)
 
 def geo(df):
@@ -116,6 +116,7 @@ def geo(df):
     new_df.reset_index(drop=True, inplace=True)
     all_df = pd.concat([df, new_df], axis=1)
     all_df.to_csv('ips_geo.csv', index=False)
+    rdap(all_df)
 
 def rdap(df):
     new_df = pd.DataFrame(columns=['handle', 'name', 'last_changed', 'registration'])
